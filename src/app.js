@@ -10,4 +10,7 @@ app.use(morgan('dev'));
 app.use(helmet());
 app.use(compression());
 
+// databases setup
+require('./databases/mongodb.connect');
+
 module.exports = app;

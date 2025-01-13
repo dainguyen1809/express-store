@@ -3,7 +3,11 @@
 const mongoose = require('mongoose');
 const { countConnect, checkOverload } = require('../helpers/check.connect');
 
-const connStr = `mongodb://localhost:27017/techstore`;
+const {
+  db: { host, port, name },
+} = require('../configs/config.mongodb');
+
+const connStr = `mongodb://${host}:${port}/${name}`;
 
 class Database {
   /**
@@ -25,7 +29,7 @@ class Database {
         maxPoolsize: 50;
         countConnect();
         console.log(`Connected successfully`);
-        checkOverload();
+        // checkOverload();
       })
       .catch((err) => {
         console.log(`Error connect`);

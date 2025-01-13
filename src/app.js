@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const helmet = require('helmet');
@@ -13,4 +14,6 @@ app.use(compression());
 // databases setup
 require('./databases/mongodb.connect');
 
+// routes
+app.use('/', require('./routes'));
 module.exports = app;

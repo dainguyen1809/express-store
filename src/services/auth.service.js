@@ -34,11 +34,13 @@ class AuthService {
         console.log({ publicKey, privateKey });
 
         // saving token to collection
-        const keyStore = KeyTokenService.generateKeyToken({
+        const keyStore = await KeyTokenService.generateKeyToken({
           userId: newUser._id,
           publicKey,
           privateKey,
         });
+
+        console.log('key store:::', keyStore);
 
         if (!keyStore) {
           return {

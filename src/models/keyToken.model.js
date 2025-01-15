@@ -11,7 +11,7 @@ var tokenSchema = new mongoose.Schema(
     user: {
       type: Schema.Types.ObjectId,
       required: true,
-      ref: 'user',
+      ref: 'User',
     },
     publicKey: {
       type: String,

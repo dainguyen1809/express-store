@@ -13,6 +13,8 @@ class AuthService {
     try {
       const holderUser = await userModel.findOne({ email }).lean();
 
+      console.log(`holderUser:::::::::::`, holderUser);
+
       if (holderUser) {
         return {
           code: '1234',

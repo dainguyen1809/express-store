@@ -28,7 +28,7 @@ class Database {
       .then((_) => {
         maxPoolsize: 50;
         countConnect();
-        console.log(`Connected successfully`);
+        console.log(`Connected ${name} successfully`);
         // checkOverload();
       })
       .catch((err) => {
